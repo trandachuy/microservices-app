@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Login the Docker image
+      run: docker login -u huydactran1604 -p trandachuy160495
+
+    - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file microservices-app/jhipster-alerter/Dockerfile --tag my-image-name:$(date +%s)
