@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
-        run: "Hello!, Security DevSecOps"
+        run: echo "Hello!, Security DevSecOps"
