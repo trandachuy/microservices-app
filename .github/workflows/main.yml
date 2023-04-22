@@ -14,10 +14,15 @@ jobs:
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-    - name: set up docker-compose
-      uses: KengoTODA/actions-setup-docker-compose@v1
+    - name: Setup docker-compose
+  # You may pin to the exact commit or the version.
+  # uses: KengoTODA/actions-setup-docker-compose@1d605d961123cbab67ef2d916746ba4d31413dcb
+      uses: KengoTODA/actions-setup-docker-compose@v1.0.9
       with:
-        version: '2.14.2' # the full version of `docker-compose` command
-    - name: Start containers
-      run: docker-compose -f "docker-compose.yml" up -d
+    # the version of docker-compose command
+        version: latest
+    - name: Docker Compose Run Action
+      uses: adrielcodeco/docker-compose-run-action@v1
+      with:
+        compose-file: docker-compose.yml
 
