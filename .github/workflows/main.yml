@@ -19,5 +19,5 @@ jobs:
       with:
         version: '2.14.2' # the full version of `docker-compose` command
     - name: Start containers
-      run: docker-compose -f "app.yml" up -d
+      run: docker-compose -f "docker-compose.yml" up -d
 
