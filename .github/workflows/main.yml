@@ -15,5 +15,5 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     - name: Start containers
-      run: docker-compose -f "docker-compose.yml" up -d
+      run: docker-compose -f "app.yml" up -d
 
