@@ -9,11 +9,11 @@ jobs:
   # need checkout before using compose-action
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Login to Docker Hub
-      uses: ./
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Login to docker hub
+      uses: actions-hub/docker/login@master
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
     - name: Start containers
       run: docker-compose -f "docker-compose.yml" up -d --build
 
